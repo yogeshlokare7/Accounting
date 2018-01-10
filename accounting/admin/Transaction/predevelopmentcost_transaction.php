@@ -73,45 +73,39 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Id*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
+                            
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Payee Name *</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="accountname" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
+                            </div>
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Cost Code</label>
+                                <input type="text" name="accountname" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Cost Code</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
+                              <div class="form-group no-margin-hr">
+                                <label class="control-label">Project Id*</label>
+                                <input type="text" name="accountname" maxlength="15" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                               <div class="form-group no-margin-hr">
                                 <label class="control-label">Net Cost*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="accountname" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
+                           
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
                        <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">GST*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="accountname" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">PST</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
+                                <input type="text" name="accountname" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
@@ -119,26 +113,19 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Holdback*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="accountname" maxlength="25"  autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Gross Amount</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
+                              <input type="text" name="accountname"  onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
                      <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Project Id*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
+                           
                             
                         </div><!-- col-sm-6 -->
                         
