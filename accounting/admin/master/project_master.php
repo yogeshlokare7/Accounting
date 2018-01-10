@@ -34,8 +34,8 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <th>Project Id</th>
                                 <th>Project Name</th>
                                 <th>Project Type</th>
-                                <th>Resident Area</th>
-                                <th>Commercial Area</th>
+                                <th>No Resi Area</th>
+                                <th>No Comm Area</th>
                                 <th>Unit</th>
                                 <th>Active</th>
                             </tr>
@@ -43,13 +43,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <tbody>
 
                             <tr class="odd gradeX">
-                                <td>Total Hard Construction Cost Budget</td>
-                                <td>Approved Hard Cost Revisions</td>
-                                <td>Final Hard Construction Cost Budget</td>
-                                <td>Total Soft Cost Budget</td>
                                 <td>1</td>
                                 <td>1</td>
-                                <td>1</td>
+                                <td>Vantage Squamish</td>
+                                <td>6-Storey Mixed-Use:  Retail & Residential</td>
+                                <td>73</td>
+                                <td>2</td>
+                                <td>75</td>
                                 <td><a href="mainpage.php?pagename=projectdetails_master">details</a></td>
                             </tr>
 

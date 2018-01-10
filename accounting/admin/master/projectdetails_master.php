@@ -87,165 +87,159 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   
-                                    
-                               
+
+
+
                                 </tr>
-                                 <tr class="odd gradeX">
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Approved Hard Cost Revisions</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                               <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Final Hard Construction Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   
-                                   <tr class="odd gradeX">
+                                </tr> 
+
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Total Soft Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Approved Soft Cost Revisions</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX"  style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Final Soft Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Final Soft Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX"  >
                                     <td></td>
                                     <td>Total Land Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Approved Land Cost Revisions</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Final Land Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Total Financing Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                   <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Approved Financing Cost Revisions</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Final Financing Cost Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Total Hard Cost Contingency</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Total Soft Cost Contingency</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Total Project Contingency</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Final Development Budget</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Total Project Contingency</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Approved 1st Mortgage Loan</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX">
                                     <td></td>
                                     <td>Approved 2nd Mortgage Loan</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Total Registered Debt</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                    </tr> 
-                                    <tr class="odd gradeX">
+                                </tr> 
+                                </tr> 
+                                <tr class="odd gradeX" style="font-weight: bold;background-color: rgb(220,220,220)">
                                     <td></td>
                                     <td>Equity Requirement</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                   </tr> 
-                                
-                                
-                                
-
-                                
-                                
+                                </tr> 
                             </tbody>
                         </table>
                     </div>
