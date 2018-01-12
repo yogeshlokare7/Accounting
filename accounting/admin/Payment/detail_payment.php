@@ -76,15 +76,40 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Customer Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Payment Type Detail Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Customer Name *</label>
-                                <input type="text" name="name" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Payment Part/Type *</label>
+                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
+                                    <option value="">Select Payment Part/Type</option>
+                                    <?php
+                                    foreach ($resultsetEmployees as $key => $value) {
+                                        ?>
+                                        <option value="<?php echo $value["id"] ?>">
+                                            <?php echo $value["firstname"] ?> <?php echo $value["middlename"] ?> <?php echo $value["lastname"] ?> 
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div><!-- col-sm-6 -->
+                    </div><!-- row -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Invoice No  <i class="requred">*</i></label>
+                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter invoice number here" class="form-control">
+                            </div>
+                        </div><!-- col-sm-6 -->
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Payment Date *</label>
+                                <input type="text" name="address" autofocus="" placeholder="Enter payment date here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -92,46 +117,65 @@ $resultset = MysqlConnection::fetchAll($tblname);
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Email Id  <i class="requred">*</i></label>
-                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <label class="control-label">Gross Price  <i class="requred">*</i></label>
+                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter gross price here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Address*</label>
-                                <input type="text" name="address" autofocus="" placeholder="Enter Address here" class="form-control">
+                                <label class="control-label">Holdback *</label>
+                                <input type="text" name="address" autofocus="" placeholder="Enter holdback here" class="form-control">
+                            </div>
+                        </div><!-- col-sm-6 -->
+
+                    </div><!-- row -->
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Net Price <i class="requred">*</i></label>
+                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter net price here" class="form-control">
+                            </div>
+                        </div><!-- col-sm-6 -->
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Net Price (Inc. GST) *</label>
+                                <input type="text" name="address" autofocus="" placeholder="Enter net price(inc. GST) here" class="form-control">
+                            </div>
+                        </div><!-- col-sm-6 -->
+
+                    </div><!-- row -->
+                    
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Paid  <i class="requred">*</i></label>
+                                <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
+                                    <option value="">Select(YES/NO)</option>
+                                    <option value="Y">YES
+                                    </option>
+                                    <option value="N">NO
+                                    </option>
+                                </select>
+                            </div>
+                        </div><!-- col-sm-6 -->
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Cleared *</label>
+                                <input type="text" name="address" autofocus="" placeholder="Enter cleared here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
                     </div><!-- row -->
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Country*</label>
-                                <input type="text" name="country" autofocus="" placeholder="Enter City Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Province *</label>
-                                <input type="text" name="province" autofocus="" placeholder="Enter Province" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Contact Number *</label>
-                                <input type="text" name="contact_no" autofocus="" placeholder="Enter Contact" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Fax Number *</label>
-                                <input type="text" name="fax_no" autofocus="" placeholder="Enter Fax number" class="form-control">
+                                <label class="control-label">Comment  *</label>
+                                <input type="text" name="name" autofocus="" placeholder="Enter comment here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
                     </div><!-- row -->
-                </div>  
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-primary" value="Save"/>  
                     <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>

@@ -85,7 +85,18 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contractor Name *<i class="requred"></i></label>
-                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter Contractor Here" class="form-control">
+                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
+                                    <option value="">Select Contractor Name</option>
+                                    <?php
+                                    foreach ($resultsetEmployees as $key => $value) {
+                                        ?>
+                                        <option value="<?php echo $value["id"] ?>">
+                                            <?php echo $value["firstname"] ?> <?php echo $value["middlename"] ?> <?php echo $value["lastname"] ?> 
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
@@ -100,7 +111,18 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Subtrade Name *<i class="requred"></i></label>
-                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter Subtrade Here" class="form-control">
+                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
+                                    <option value="">Select Subtrader Name</option>
+                                    <?php
+                                    foreach ($resultsetEmployees as $key => $value) {
+                                        ?>
+                                        <option value="<?php echo $value["id"] ?>">
+                                            <?php echo $value["firstname"] ?> <?php echo $value["middlename"] ?> <?php echo $value["lastname"] ?> 
+                                        </option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
