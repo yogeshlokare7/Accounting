@@ -84,7 +84,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Payment Part/Type *</label>
-                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
+                               <select id="empId" name="name" required="true" autofocus="true" class="form-control" tabindex="1" required>
                                     <option value="">Select Payment Part/Type</option>
                                     <?php
                                     foreach ($resultsetEmployees as $key => $value) {
@@ -103,13 +103,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Invoice No  <i class="requred">*</i></label>
-                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter invoice number here" class="form-control">
+                                <input type="text" name="invoice_no" required="true" autofocus="" placeholder="Enter invoice number here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Payment Date *</label>
-                                <input type="text" name="address" autofocus="" placeholder="Enter payment date here" class="form-control">
+                                <input type="text" name="payment_date" autofocus="" placeholder="Enter payment date here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -118,13 +118,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Gross Price  <i class="requred">*</i></label>
-                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter gross price here" class="form-control">
+                                <input type="text" name="gross_price" required="true" autofocus="" placeholder="Enter gross price here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Holdback *</label>
-                                <input type="text" name="address" autofocus="" placeholder="Enter holdback here" class="form-control">
+                                <input type="text" name="holdback" autofocus="" placeholder="Enter holdback here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -134,13 +134,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Net Price <i class="requred">*</i></label>
-                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter net price here" class="form-control">
+                                <input type="text" name="net_price" required="true" autofocus="" placeholder="Enter net price here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Net Price (Inc. GST) *</label>
-                                <input type="text" name="address" autofocus="" placeholder="Enter net price(inc. GST) here" class="form-control">
+                                <input type="text" name="netprice_inc_tax" autofocus="" placeholder="Enter net price(inc. GST) here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -150,7 +150,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Paid  <i class="requred">*</i></label>
-                                <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
+                                <select id="empId" name="paid" required="true" autofocus="true" class="form-control" tabindex="1" required>
                                     <option value="">Select(YES/NO)</option>
                                     <option value="Y">YES
                                     </option>
@@ -162,7 +162,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Cleared *</label>
-                                <input type="text" name="address" autofocus="" placeholder="Enter cleared here" class="form-control">
+                                <input type="text" name="cleared" autofocus="" placeholder="Enter cleared here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -171,7 +171,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Comment  *</label>
-                                <input type="text" name="name" autofocus="" placeholder="Enter comment here" class="form-control">
+                                <input type="text" name="comment" autofocus="" placeholder="Enter comment here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
