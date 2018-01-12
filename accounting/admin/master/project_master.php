@@ -1,9 +1,10 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "project";
 if (count($_POST) > 0) {
     MysqlConnection::insert($tblname, $_POST);
 }
-$resultset = MysqlConnection::fetchAll($tblname);
+$resultset = MysqlConnection::fetchAllAscending($tblname);
+print_r($resultset);
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -28,28 +29,34 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Project Id</th>
+                                <th>Project Code</th>
                                 <th>Project Name</th>
                                 <th>Project Type</th>
                                 <th>No Resi Area</th>
                                 <th>No Comm Area</th>
-                                <th>Unit</th>
-                                <th>Active</th>
+                                <th>Address</th>
+                                <th>Total Billable Sqft</th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr class="odd gradeX">
-                                <td>1</td>
-                                <td>1</td>
-                                <td>Vantage Squamish</td>
-                                <td>6-Storey Mixed-Use:  Retail & Residential</td>
-                                <td>73</td>
-                                <td>2</td>
-                                <td>75</td>
-                                <td><a href="mainpage.php?pagename=projectdetails_master">details</a></td>
+                            <?php
+                            $index = 1;
+                            foreach ($resultset as $key => $value) {
+                                ?>
+                                <tr class="odd gradeX">
+                                    <td><?php echo $index ?></td>
+                               <td><?php echo $value["proj_id"] ?></td>
+                               <td><?php echo $value["proj_name"] ?></td>
+                               <td><?php echo $value["proj_type"] ?></td>
+                               <td><?php echo $value["ressidential_unit"] ?></td>
+                               <td><?php echo $value["commercial_unit"] ?></td>
+                               <td><?php echo $value["address"] ?></td>
+                               <td><?php echo $value["total_billable_sqft"] ?></td>
                             </tr>
-
+                            <?php
+                                $index++;
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -70,19 +77,16 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Project Id *</label>
-                                <input type="text" name="accountname" maxlength="11" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
+                            
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Project Name *</label>
-                                <input type="text" name="accountname" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="proj_name" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Project Type</label>
-                                <select class="form-control"  name="accounttype">
+                                <select class="form-control"  name="proj_type">
                                     <option>Select Account Type</option>
                                     <option>Income</option>
                                     <option>Expense</option>
@@ -90,7 +94,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             </div>
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Address *</label>
-                                <input type="text" name="accountname" maxlength="200" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="address" maxlength="200" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
@@ -98,13 +102,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Country*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="country" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Province</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="province" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
@@ -112,13 +116,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Residential Unit*</label>
-                                <input type="text" name="accountname" maxlength="11" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="ressidential_unit" maxlength="11" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Commertial Unit</label>
-                                <input type="text" name="accountname" maxlength="11" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="commercial_unit" maxlength="11" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
@@ -126,19 +130,19 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Start Date*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="start_date" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
 
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Total Billable Sqft</label>
-                                <input type="text" name="accountname" maxlength="11" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="total_billable_sqft" maxlength="11" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
 
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">End Date*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="end_date" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
