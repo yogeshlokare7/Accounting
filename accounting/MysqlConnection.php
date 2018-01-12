@@ -6,7 +6,7 @@ class MysqlConnection {
         $DB_NAME = "accounting";
         $DB_HOST = "localhost";
         $DB_USER = "root";
-        $DB_PASS = "";
+        $DB_PASS = "root";
         return mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
     }
 
@@ -34,7 +34,7 @@ class MysqlConnection {
                 $keysset .= "`" . $key . "`,";
                 $valuesset .= "'" . trim($values) . "',";
             }
-             $query = " INSERT INTO $tbl (" . substr($keysset, 0, strlen($keysset) - 1) . ") VALUES (" . substr($valuesset, 0, strlen($valuesset) - 1) . ");";
+            echo $query = " INSERT INTO $tbl (" . substr($keysset, 0, strlen($keysset) - 1) . ") VALUES (" . substr($valuesset, 0, strlen($valuesset) - 1) . ");";
             MysqlConnection::executeQuery($query);
             return mysqli_insert_id();
         } catch (Exception $exc) {
@@ -94,13 +94,13 @@ class MysqlConnection {
      * @return Array
      */
     static function fetchAll($tbl, $sql = array()) {
-         $query = "SELECT * FROM $tbl ORDER BY id DESC";
+        echo $query = "SELECT * FROM $tbl ";
         $resource = MysqlConnection::executeQuery($query);
         return MysqlConnection::toArrays($resource);
     }
-    
+
     static function fetchAllAscending($tbl, $sql = array()) {
-         $query = "SELECT * FROM $tbl";
+        $query = "SELECT * FROM $tbl";
         $resource = MysqlConnection::executeQuery($query);
         return MysqlConnection::toArrays($resource);
     }

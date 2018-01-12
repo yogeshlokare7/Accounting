@@ -1,9 +1,6 @@
 <?php
 $tblname = "tbl_account";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);

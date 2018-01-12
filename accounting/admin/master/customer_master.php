@@ -1,7 +1,7 @@
 <?php
 $tblname = "customer_master";
 if (count($_POST) > 0) {
-    
+    MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -77,12 +77,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Customer ID *</label>
-                                <input type="text" name="customer_id" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Customer Name *</label>

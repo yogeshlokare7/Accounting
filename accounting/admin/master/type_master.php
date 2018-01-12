@@ -1,10 +1,9 @@
 <?php
 $tblname = "category_type_master";
 if (count($_POST) > 0) {
-  
     MysqlConnection::insert($tblname, $_POST);
 }
-$resultset = MysqlConnection::fetchAllAscending($tblname);
+$resultset = MysqlConnection::fetchAll($tblname);
 ?>
 <div class="row">
     <div class="col-sm-12">

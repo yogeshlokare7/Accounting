@@ -1,7 +1,7 @@
 <?php
 $tblname = "taxinfo_master";
 if (count($_POST) > 0) {
-    
+  MysqlConnection::insert($tblname, $_POST);  
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -33,7 +33,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <th>Province</th>
                                 <th>Tax Type</th>
                                 <th>Tax Percent</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,12 +72,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Tax ID *</label>
-                                <input type="text" name="tax_id" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Country *</label>

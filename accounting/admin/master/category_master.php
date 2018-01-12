@@ -1,10 +1,10 @@
 <?php
 $tblname = "category_master";
 if (count($_POST) > 0) {
-
     MysqlConnection::insert($tblname, $_POST);
 }
-$resultset = MysqlConnection::fetchAllAscending($tblname);
+$resultset = MysqlConnection::fetchAll($tblname);
+print_r($resultset);
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -31,8 +31,8 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
                                 <th>#</th>
                                 <th>Category Id</th>
                                 <th>Category Name</th>
-                               <th>Description</th>
-                               <th>Category Type Id</th>
+                                <th>Description</th>
+                                <th>Category Type Id</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,7 +58,6 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
         </div>
     </div>
 </div>
-
 <!--- ADD POP UP DIALOG ---->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
     <div class="modal-dialog">
@@ -69,44 +68,37 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
-                    
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group no-margin-hr">
-                                    <label class="control-label">Category Id *</label>
-                                    <input type="text" name="category_id" autofocus="" placeholder="Enter Category Name" class="form-control">
-                                </div>
-                            </div><!-- col-sm-6 -->
-                            <div class="col-sm-6">
-                                <div class="form-group no-margin-hr">
-                                    <label class="control-label">Category Name *</label>
-                                    <input type="text" name="name" autofocus="" placeholder="Enter Category Type" class="form-control">
-                                </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Category Name *</label>
+                                <input type="text" name="name" autofocus="" placeholder="Enter Category Type" class="form-control">
                             </div>
-                        </div><!-- row -->
-                         <div class="row">
-                            
-                            <div class="col-sm-6">
-                                <div class="form-group no-margin-hr">
-                                    <label class="control-label">Description *</label>
-                                    <input type="text" name="description" autofocus="" placeholder="Enter Description" class="form-control">
-                                </div>
+                        </div>
+                    </div><!-- row -->
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Description *</label>
+                                <input type="text" name="description" autofocus="" placeholder="Enter Description" class="form-control">
                             </div>
-                               <div class="col-sm-6">
-                                <div class="form-group no-margin-hr">
-                                    <label class="control-label">Category Type Id*</label>
-                                    <input type="text" name="categorytype_id" autofocus="" placeholder="Enter Description" class="form-control">
-                                </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Category Type Id*</label>
+                                <input type="text" name="categorytype_id" autofocus="" placeholder="Enter Description" class="form-control">
                             </div>
-                        </div><!-- row -->
-                    </div>  
+                        </div>
+                    </div><!-- row -->
                 </div>  
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" value="Save"/>  
-                    <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div> 
-    </div>  
+        </div>  
+        <div class="modal-footer">
+            <input type="submit" class="btn btn-primary" value="Save"/>  
+            <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+        </form>
+    </div> 
+</div>  
 </div>  
 <!--- ADD POP UP DIALOG ---->

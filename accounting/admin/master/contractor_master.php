@@ -1,7 +1,7 @@
 <?php
 $tblname = "contractor_master";
 if (count($_POST) > 0) {
-    
+    MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -35,7 +35,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <th>Country</th>
                                 <th>Province</th> 
                                 <th>Contact No</th>
-                                 <th>Fax No</th>
+                                <th>Fax No</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,12 +77,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Contractor ID *</label>
-                                <input type="text" name="contractor_id" autofocus="" placeholder="Enter Id" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contractor Name *</label>

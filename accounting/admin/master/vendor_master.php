@@ -1,7 +1,6 @@
 <?php
 $tblname = "vendor_master";
 if (count($_POST) > 0) {
-
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
@@ -37,8 +36,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <th>Province</th>
                                 <th>Contact No</th>
                                 <th>Fax No</th>
-
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,7 +49,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                     <td><?php echo $value["country"] ?></td>
                                     <td><?php echo $value["vendor_email"] ?></td>
                                     <td><?php echo $value["address"] ?></td>
-                                     <td><?php echo $value["country"] ?></td>
+                                    <td><?php echo $value["country"] ?></td>
                                     <td><?php echo $value["province"] ?></td>
                                     <td><?php echo $value["contact_no"] ?></td>
                                     <td><?php echo $value["fax_no"] ?></td>
@@ -80,12 +77,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Vendor ID *</label>
-                                <input type="text" name="vendor_id" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Vendor Name *</label>
