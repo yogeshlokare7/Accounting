@@ -1,9 +1,7 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "development_cost_summary";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
+  
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
@@ -31,26 +29,32 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Project Id</th>
-                                <th>Project Name</th>
-                                <th>Total Div</th>
-                                <th>Total Types</th>
-                                <th>No Of Unit</th>
-                                <th>Total Sq-Feet</th>
-                                <th>Avg Sq-Feet</th>
+                               
+                                
+                                <th>Total Budget</th>
+                                <th>Per Unit</th>
+                                <th>Per sf</th>
+                                <th>Budget Increase</th>
+                                <th>Final Budget</th>
+                                <th>Pre Dev</th>
+                                <th>Cost in Place</th>
+                                <th>Cost to Complete</th>
+                                
                                 <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="odd gradeX">
-                                <td>1</td>
-                                <td>001</td>
-                                <td>Vantage Squamish</td>
-                                <td>21</td>
-                                <td>3</td>
-                                <td>75</td>
-                                <td>68,332</td>
-                                <td>911</td>
+                                <td><?php echo $index ?></td>
+                                    <td><?php echo $value["total_budget"]?></td>
+                                    <td><?php echo $value["per_unit"]?></td>
+                                    <td><?php echo $value["per_sf"]?></td>
+                                     <td><?php echo $value["budget_increase"]?></td>
+                                    <td><?php echo $value["final_budget"]?></td>
+                                    <td><?php echo $value["pre_dev"]?></td>
+                                    <td><?php echo $value["cost_in_place"]?></td>
+                                     <td><?php echo $value["cost_to_complete"]?></td>
+                                     
                                 <th>
                                     <a href="mainpage.php?pagename=adddevcostsummary_transaction">add</a>
                                 </th>
@@ -68,67 +72,62 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Development Cost Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Development Cost Summary Transaction Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Category_Id *</label>
-                                <input type="text" name="accountname" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Total_Budget*</label>
-                                <input type="text" name="totalbudget" maxlength="" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
-                            </div>
+                            
+                           
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Per Unit*</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <label class="control-label">Total Budget</label>
+                                <input type="text" name="total_budget" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Per Sf</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <label class="control-label">Per Unit</label>
+                                <input type="text" name="per_unit" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Budget Increase*</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <label class="control-label">Per sf</label>
+                                <input type="text" name="per_sf" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Budget Increase</label>
+                                <input type="text" name="budget_increase" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                            </div>
+                        </div><!-- col-sm-6 -->
+                    </div><!-- row -->
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Final Budget</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Pre Dev*</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <input type="text" name="final_budget" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Cost To Complete*</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <label class="control-label">Pre Dev</label>
+                                <input type="text" name="pre_dev" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
 
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Cost In Place*</label>
-                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <label class="control-label">Cost in Place</label>
+                                <input type="text" name="cost_in_place" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Project Id</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Cost to Complete</label>
+                                <input type="text" name="cost_to_complete" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
+                           
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
 

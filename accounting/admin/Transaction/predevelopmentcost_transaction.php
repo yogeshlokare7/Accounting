@@ -1,9 +1,7 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "pre_development_cost";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
+   
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
@@ -31,10 +29,15 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Account Name</th>
-                                <th>Account Type</th>
-                                <th>Entry Date</th>
-                                <th>Active</th>
+                               
+                                <th>Payee Name</th>
+                                <th>Coast Code</th>
+                                <th>NetCoast</th>
+                                <th>GST</th>
+                                <th>PST</th>
+                                <th>HoldBack</th>
+                                <th>Gross Amount</th>
+                                <th>Project Id</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +47,14 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $value["payee_name"]?></td>
+                                    <td><?php echo $value["coast_code"]?></td>
+                                    <td><?php echo $value["netCoast"]?></td>
+                                     <td><?php echo $value["gst"]?></td>
+                                    <td><?php echo $value["pst"]?></td>
+                                    <td><?php echo $value["holdBack"]?></td>
+                                    <td><?php echo $value["gross_amt"]?></td>
+                                     <td><?php echo $value["proj_id"]?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -67,7 +74,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Pre Development Cost Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Pre Development Cost Transaction Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
@@ -76,21 +83,21 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Payee Name *</label>
-                                <input type="text" name="accountname" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="payee_name" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Cost Code</label>
-                                <input type="text" name="accountname" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Coast Code</label>
+                                <input type="text" name="coast_code" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                               <div class="form-group no-margin-hr">
-                                <label class="control-label">Project Id*</label>
-                                <input type="text" name="accountname" maxlength="15" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Net Coast</label>
+                                <input type="text" name="netCoast" maxlength="15" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                               <div class="form-group no-margin-hr">
-                                <label class="control-label">Net Cost*</label>
-                                <input type="text" name="accountname" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">GST</label>
+                                <input type="text" name="gst" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                            
                         </div><!-- col-sm-6 -->
@@ -98,28 +105,28 @@ $resultset = MysqlConnection::fetchAll($tblname);
                        <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">GST*</label>
-                                <input type="text" name="accountname" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">PST</label>
+                                <input type="text" name="pst" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">PST</label>
-                                <input type="text" name="accountname" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Holdback</label>
+                                <input type="text" name="holdBack" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
                        <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Holdback*</label>
-                                <input type="text" name="accountname" maxlength="25"  autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Gross Amount</label>
+                                <input type="text" name="gross_amt" maxlength="25"  autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Gross Amount</label>
-                              <input type="text" name="accountname"  onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Project Id</label>
+                              <input type="text" name="proj_id"  onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->

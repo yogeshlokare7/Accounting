@@ -1,9 +1,7 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "invoice_master";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
+   
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
@@ -31,10 +29,14 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Account Name</th>
-                                <th>Account Type</th>
-                                <th>Entry Date</th>
-                                <th>Active</th>
+                                <th>Invoice Code</th>
+                                <th>Invoice Date</th>
+                                <th>Date Entered</th>
+                                <th>Date Paid</th>
+                                <th>Draw</th>
+                                <th>Predevelopment Id</th>
+                                <th>Check No</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +46,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $value["invoice_id"]?></td>
+                                    <td><?php echo $value["invoice_date"]?></td>
+                                    <td><?php echo $value["date_entered"]?></td>
+                                    <td><?php echo $value["date_paid"]?></td>
+                                    <td><?php echo $value["draw"]?></td>
+                                    <td><?php echo $value["predevelopment_id"]?></td>
+                                    <td><?php echo $value["check_no"]?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -67,7 +72,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Invoice Master Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Invoice Master Transaction Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
@@ -75,39 +80,39 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Invoice Id *</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="invoice_id" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Pre Development Id *</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Invoice Date *</label>
+                                <input type="text" name="invoice_date" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Invoice Date</label>
-                                <select class="form-control" name="accounttype">
+                                <label class="control-label">Date Entered</label>
+                                <select class="form-control" name="data_entered">
                                     <option>Select Account Type</option>
                                     <option>Income</option>
                                     <option>Expense</option>
                                 </select>
                             </div>
                               <div class="form-group no-margin-hr">
-                                <label class="control-label">Date Entered*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Date Paid*</label>
+                                <input type="text" name="data_paid" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
                        <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Date Paid*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <label class="control-label">Draw*</label>
+                                <input type="text" name="draw" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Draw</label>
-                                <select class="form-control" name="accounttype">
+                                <label class="control-label">Predevelopment Id</label>
+                                <select class="form-control" name="predevelopment_id">
                                     <option>Select Account Type</option>
                                     <option>Income</option>
                                     <option>Expense</option>
@@ -119,7 +124,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Check No*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="check_no" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         
