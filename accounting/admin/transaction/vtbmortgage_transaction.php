@@ -1,11 +1,5 @@
 <?php
 $tblname = "tbl_account";
-if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
-    MysqlConnection::insert($tblname, $_POST);
-}
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
 <div class="row">
@@ -22,7 +16,9 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <span class="panel-title">View <?php echo $explode[1] ?></span>
                 <span class="panel-title">&nbsp;|&nbsp;</span>
                 <span class="panel-title">
-                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add VTB Mortgage Summary</button>
+                    <a href="mainpage.php?pagename=addvtbmortgage_transaction" class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" >
+                        Add VTB Mortgage Summary
+                    </a>
                 </span>
             </div>
             <div class="panel-body">
@@ -31,23 +27,30 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Account Name</th>
-                                <th>Account Type</th>
-                                <th>Entry Date</th>
-                                <th>Active</th>
+                                <th>Project Name</th>
+                                <th>Gross Loan Amount</th>
+                                <th>Funding Date</th>
+                                <th>Maturity Date</th>
+                                <th>Interest Rate</th>
+                                <th>Nominal Interest Rate</th>
+                                <th>Monthly Effective Rate</th>
+                                <th>Daily Effective Rate</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $index = 1;
-                            foreach ($resultset as $key => $value) {
+                            for ($index = 0; $index < 10; $index++) {
                                 ?>
                                 <tr class="odd gradeX">
-                                    <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $index?></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -60,125 +63,3 @@ $resultset = MysqlConnection::fetchAll($tblname);
         </div>
     </div>
 </div>
-
-<!--- ADD POP UP DIALOG ---->
-<div id="myModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add VTB Mortgage Information</h4>
-            </div>
-            <form name="frmEntry" method="post">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">VTB Id *</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">VTB Name *</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Additional Draws</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
-                            </div>
-                              <div class="form-group no-margin-hr">
-                                <label class="control-label">Description*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                       <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">From Date*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">To Date</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                       <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Days Of Intrest*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Start Loan Balance</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Holdback*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Intrest Charge*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Intrest Paid</label>
-                                <select class="form-control" name="accounttype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
-                            </div>
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Principal Payment*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Ending Loan Balance*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Project Id*</label>
-                                <input type="text" name="accountname" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                        
-                    </div><!-- row -->
-                </div>  
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" value="Save"/>  
-                    <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div> 
-    </div>  
-</div>  
-<!--- ADD POP UP DIALOG ---->

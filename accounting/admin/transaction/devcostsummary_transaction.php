@@ -62,7 +62,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
         </div>
     </div>
 </div>
-
 <!--- ADD POP UP DIALOG ---->
 <div id="myModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
     <div class="modal-dialog">
