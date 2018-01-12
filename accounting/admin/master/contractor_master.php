@@ -31,10 +31,11 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <th>Contractor Id</th>
                                 <th>Contractor Name</th>
                                 <th>Contractor email</th>
-                                <th>address</th>
-                                <th>country</th>
-                                <th>province</th> 
-                                <th>contact No</th>
+                                <th>Address</th>
+                                <th>Country</th>
+                                <th>Province</th> 
+                                <th>Contact No</th>
+                                 <th>Fax No</th>
                             </tr>
                         </thead>
                         <tbody>

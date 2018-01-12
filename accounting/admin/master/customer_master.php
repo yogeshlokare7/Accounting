@@ -1,5 +1,5 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "customer_master";
 if (count($_POST) > 0) {
     $_POST["entrydate"] = date("y-m-d");
     $_POST["updatedate"] = date("y-m-d");
@@ -13,7 +13,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <script>
             init.push(function () {
                 $('#jq-datatables-example').dataTable();
-                $('#jq-datatables-example_wrapper .table-caption').text('Customer Information');
+                $('#jq-datatables-example_wrapper .table-caption').text('Customer Master Information');
                 $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Search...');
             });
         </script>
@@ -22,7 +22,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <span class="panel-title">View <?php echo $explode[1] ?></span>
                 <span class="panel-title">&nbsp;|&nbsp;</span>
                 <span class="panel-title">
-                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Customer</button>
+                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Customer </button>
                 </span>
             </div>
             <div class="panel-body">
@@ -33,8 +33,12 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <th>#</th>
                                 <th>Customer Id</th>
                                 <th>Customer Name</th>
-                                <th>Entry Date</th>
-                                <th>Active</th>
+                                <th>Customer Email</th>
+                                <th>Address</th>
+                                <th>Country</th>
+                                <th>Province</th>
+                                <th>Contact No</th>
+                                <th>Fax No</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +48,14 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $value["customer_id"]?></td>
+                                    <td><?php echo $value["name"]?></td>
+                                    <td><?php echo $value["customer_email"]?></td>
+                                    <td><?php echo $value["address"]?></td>
+                                    <td><?php echo $value["country"]?></td>
+                                    <td><?php echo $value["province"]?></td>
+                                    <td><?php echo $value["contact_no"]?></td>
+                                    <td><?php echo $value["fax_no"]?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -75,13 +83,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Customer ID *</label>
-                                <input type="text" name="customerId" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="customer_id" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                          <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Customer Name *</label>
-                                <input type="text" name="customername" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="name" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         
@@ -90,7 +98,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                               <div class="form-group no-margin-hr">
                                 <label class="control-label">Email Id  <i class="requred">*</i></label>
-                                <input type="text" name="emailid" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                          <div class="col-sm-6">
@@ -104,8 +112,8 @@ $resultset = MysqlConnection::fetchAll($tblname);
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">City*</label>
-                                <input type="text" name="city" autofocus="" placeholder="Enter City Name" class="form-control">
+                                <label class="control-label">Country*</label>
+                                <input type="text" name="country" autofocus="" placeholder="Enter City Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                          <div class="col-sm-6">
@@ -117,13 +125,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                          <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contact Number *</label>
-                                <input type="text" name="contact" autofocus="" placeholder="Enter Contact" class="form-control">
+                                <input type="text" name="contact_no" autofocus="" placeholder="Enter Contact" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                          <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Fax Number *</label>
-                                <input type="text" name="fax" autofocus="" placeholder="Enter Fax number" class="form-control">
+                                <input type="text" name="fax_no" autofocus="" placeholder="Enter Fax number" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         

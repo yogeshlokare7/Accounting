@@ -29,9 +29,10 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Category Id</th>
                                 <th>Category Name</th>
-                                <th>Category Type</th>
-                                <th>Description</th>
+                               <th>Description</th>
+                               <th>Category Type Id</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,9 +42,10 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
+                                    <td><?php echo $value["category_id"] ?></td>
                                     <td><?php echo $value["name"] ?></td>
-                                     <td><?php echo $value["type"] ?></td>
                                     <td><?php echo $value["description"] ?></td>
+                                    <td><?php echo $value["categorytype_id"] ?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -67,18 +69,18 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
-                    <div class="modal-body">
+                    
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group no-margin-hr">
-                                    <label class="control-label">Category Name *</label>
-                                    <input type="text" name="name" autofocus="" placeholder="Enter Category Name" class="form-control">
+                                    <label class="control-label">Category Id *</label>
+                                    <input type="text" name="category_id" autofocus="" placeholder="Enter Category Name" class="form-control">
                                 </div>
                             </div><!-- col-sm-6 -->
                             <div class="col-sm-6">
                                 <div class="form-group no-margin-hr">
-                                    <label class="control-label">Category Type *</label>
-                                    <input type="text" name="type" autofocus="" placeholder="Enter Category Type" class="form-control">
+                                    <label class="control-label">Category Name *</label>
+                                    <input type="text" name="name" autofocus="" placeholder="Enter Category Type" class="form-control">
                                 </div>
                             </div>
                         </div><!-- row -->
@@ -88,6 +90,12 @@ $resultset = MysqlConnection::fetchAllAscending($tblname);
                                 <div class="form-group no-margin-hr">
                                     <label class="control-label">Description *</label>
                                     <input type="text" name="description" autofocus="" placeholder="Enter Description" class="form-control">
+                                </div>
+                            </div>
+                               <div class="col-sm-6">
+                                <div class="form-group no-margin-hr">
+                                    <label class="control-label">Category Type Id*</label>
+                                    <input type="text" name="categorytype_id" autofocus="" placeholder="Enter Description" class="form-control">
                                 </div>
                             </div>
                         </div><!-- row -->
