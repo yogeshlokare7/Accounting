@@ -67,7 +67,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Account Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Banking Holdback  Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">

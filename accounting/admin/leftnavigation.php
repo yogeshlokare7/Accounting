@@ -27,9 +27,9 @@
         <li class="mm-dropdown">
             <a href="#"><i class="menu-icon fa fa-users"></i><span class="mm-text">Account</span></a>
             <ul>
-                <li><a tabindex="-1" href="mainpage.php?pagename=virtualcheckboxgp_account"><span class="mm-text">Virtual Checkbox GP Account</span></a></li>
-                <li><a tabindex="-1" href="mainpage.php?pagename=virtualcheckboxlp_account"><span class="mm-text">Virtual Checkbox LP Account</span></a></li>
-                <li><a tabindex="-1" href="mainpage.php?pagename=virtualcheckboxholdback_account"><span class="mm-text">Virtual Checkbox Holdback</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=virtualcheckbookgp_account"><span class="mm-text">Virtual Checkbook GP Account</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=virtualcheckbooklp_account"><span class="mm-text">Virtual Checkbook LP Account</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=virtualcheckbookholdback_account"><span class="mm-text">Virtual Checkbook Holdback</span></a></li>
                 <li><a tabindex="-1" href="mainpage.php?pagename=bankinggp_account"><span class="mm-text">Banking GP Account</span></a></li>
                 <li><a tabindex="-1" href="mainpage.php?pagename=bankinglp_account"><span class="mm-text">Banking LP Account</span></a></li>
                 <li><a tabindex="-1" href="mainpage.php?pagename=bankingholdback_account"><span class="mm-text">Banking Holdback</span></a></li>

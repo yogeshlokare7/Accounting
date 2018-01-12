@@ -3,7 +3,7 @@
 class MysqlConnection {
 
     static function connect() {
-        $DB_NAME = "ppms";
+        $DB_NAME = "accounting";
         $DB_HOST = "localhost";
         $DB_USER = "root";
         $DB_PASS = "";
@@ -95,6 +95,12 @@ class MysqlConnection {
      */
     static function fetchAll($tbl, $sql = array()) {
          $query = "SELECT * FROM $tbl ORDER BY id DESC";
+        $resource = MysqlConnection::executeQuery($query);
+        return MysqlConnection::toArrays($resource);
+    }
+    
+    static function fetchAllAscending($tbl, $sql = array()) {
+         $query = "SELECT * FROM $tbl";
         $resource = MysqlConnection::executeQuery($query);
         return MysqlConnection::toArrays($resource);
     }

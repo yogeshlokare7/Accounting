@@ -1,12 +1,10 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "category_type_master";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
+  
     MysqlConnection::insert($tblname, $_POST);
 }
-$resultset = MysqlConnection::fetchAll($tblname);
+$resultset = MysqlConnection::fetchAllAscending($tblname);
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -31,10 +29,8 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Category Type ID</th>
-                                <th>Category Name</th>
+                                <th>Category Type</th>
                                 <th>Description</th>
-                                <th>Active</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +40,8 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $value["name"]?></td>
+                                    <td><?php echo $value["description"]?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -75,25 +69,16 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Category Name *</label>
-                                <input type="text" name="Categoryname" autofocus="" placeholder="Enter Category Name" class="form-control">
+                                <input type="text" name="name" autofocus="" placeholder="Enter Category Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Select Category Type ID</label>
-                                <select class="form-control" name="Categorytype">
-                                    <option>Select Account Type</option>
-                                    <option>Income</option>
-                                    <option>Expense</option>
-                                </select>
-                            </div>
-                        </div><!-- col-sm-6 -->
-                         
-                   </div><!-- row -->
-                    <div class="form-group no-margin-hr">
+                        <div class="form-group no-margin-hr">
                                 <label class="control-label">Description *</label>
-                                <input type="text" name="Categoryname" autofocus="" placeholder="Enter Category Name" class="form-control">
+                                <input type="text" name="description" autofocus="" placeholder="Enter Category Name" class="form-control">
                             </div>
+                        </div>
+                   </div><!-- row -->
                 </div>  
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-primary" value="Save"/>  

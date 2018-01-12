@@ -13,7 +13,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <script>
             init.push(function () {
                 $('#jq-datatables-example').dataTable();
-                $('#jq-datatables-example_wrapper .table-caption').text('Virtual Checkbox GP Account Information');
+                $('#jq-datatables-example_wrapper .table-caption').text('Virtual Checkbook LP Account Information');
                 $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Search...');
             });
         </script>
@@ -22,7 +22,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <span class="panel-title">View <?php echo $explode[1] ?></span>
                 <span class="panel-title">&nbsp;|&nbsp;</span>
                 <span class="panel-title">
-                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Virtual Checkbox GP Account</button>
+                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Virtual Checkbook LP Account</button>
                 </span>
             </div>
             <div class="panel-body">
@@ -44,10 +44,10 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $value["accountname"] ?></td>
+                                    <td><?php echo $value["accounttype"] ?></td>
+                                    <td><?php echo $value["entrydate"] ?></td>
+                                    <td><?php echo $value["active"] ?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -67,7 +67,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Account Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Virtual Checkbook LP Account Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
@@ -89,7 +89,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
-                       <div class="row">
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Check Date *</label>
@@ -107,7 +107,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
-                       <div class="row">
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Amount *</label>
@@ -125,7 +125,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->
-                     <div class="row">
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Project Id*</label>

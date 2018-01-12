@@ -13,7 +13,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <script>
             init.push(function () {
                 $('#jq-datatables-example').dataTable();
-                $('#jq-datatables-example_wrapper .table-caption').text('Virtual Checkbox Holdback Information');
+                $('#jq-datatables-example_wrapper .table-caption').text('Virtual Checkbook Holdback Information');
                 $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Search...');
             });
         </script>
@@ -22,7 +22,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <span class="panel-title">View <?php echo $explode[1] ?></span>
                 <span class="panel-title">&nbsp;|&nbsp;</span>
                 <span class="panel-title">
-                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Virtual Checkbox Holdback Account</button>
+                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Virtual Checkbook Holdback Account</button>
                 </span>
             </div>
             <div class="panel-body">
@@ -67,7 +67,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add Account Information</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Virtual Checkbook Holdback Information</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
