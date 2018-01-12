@@ -31,28 +31,30 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Account Name</th>
-                                <th>Account Type</th>
-                                <th>Entry Date</th>
-                                <th>Active</th>
+                                <th>Project Id</th>
+                                <th>Project Name</th>
+                                <th>Total Div</th>
+                                <th>Total Types</th>
+                                <th>No Of Unit</th>
+                                <th>Total Sq-Feet</th>
+                                <th>Avg Sq-Feet</th>
+                                <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            $index = 1;
-                            foreach ($resultset as $key => $value) {
-                                ?>
-                                <tr class="odd gradeX">
-                                    <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"] ?></td>
-                                    <td><?php echo $value["accounttype"] ?></td>
-                                    <td><?php echo $value["entrydate"] ?></td>
-                                    <td><?php echo $value["active"] ?></td>
-                                </tr>
-                                <?php
-                                $index++;
-                            }
-                            ?>
+                            <tr class="odd gradeX">
+                                <td>1</td>
+                                <td>001</td>
+                                <td>Vantage Squamish</td>
+                                <td>21</td>
+                                <td>3</td>
+                                <td>75</td>
+                                <td>68,332</td>
+                                <td>911</td>
+                                <th>
+                                    <a href="mainpage.php?pagename=adddevcostsummary_transaction">add</a>
+                                </th>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -115,14 +117,14 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             </div>
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Cost To Complete*</label>
-                               <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
 
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Cost In Place*</label>
-                               <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <input type="text" name="altercontact" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Project Id</label>

@@ -11,14 +11,13 @@
         <li class="mm-dropdown">
             <a href="#"><i class="menu-icon fa fa-suitcase"></i><span class="mm-text">Master</span></a>
             <ul>
-                <li><a tabindex="-1" href="mainpage.php?pagename=project_master"><span class="mm-text">Project Master</span></a></li>
-                 <li><a tabindex="-1" href="mainpage.php?pagename=projectdetails_master"><span class="mm-text">Project Details Master</span></a></li>
-                <li><a tabindex="-1" href="mainpage.php?pagename=customer_master"><span class="mm-text">Customer Master</span></a></li>
-                <li><a tabindex="-1" href="mainpage.php?pagename=vendor_master"><span class="mm-text">Vendor Master</span></a></li>
-                <li><a tabindex="-1" href="mainpage.php?pagename=contractor_master"><span class="mm-text">Contractor Master</span></a></li>
                 <li><a tabindex="-1" href="mainpage.php?pagename=type_master"><span class="mm-text">Type Master</span></a></li>
-                <li><a tabindex="-1" href="mainpage.php?pagename=category_master"><span class="mm-text">Category Master</span></a></li>
                 <li><a tabindex="-1" href="mainpage.php?pagename=taxinfo_master"><span class="mm-text">Tax Info Master</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=customer_master"><span class="mm-text">Customer Master</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=contractor_master"><span class="mm-text">Contractor Master</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=category_master"><span class="mm-text">Category Master</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=vendor_master"><span class="mm-text">Vendor Master</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=project_master"><span class="mm-text">Project Master</span></a></li>
 
 
 
