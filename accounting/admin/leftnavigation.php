@@ -45,6 +45,15 @@
 
             </ul>
         </li>
+        
+        <li class="mm-dropdown">
+            <a href="#"><i class="menu-icon fa fa-users"></i><span class="mm-text">Payment</span></a>
+            <ul>
+                <li><a tabindex="-1" href="mainpage.php?pagename=summary_payment"><span class="mm-text">Payment Summary</span></a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=type_payment"><span class="mm-text"></span>Payment Summary Type</a></li>
+                <li><a tabindex="-1" href="mainpage.php?pagename=detail_payment"><span class="mm-text">Project Summary Type Detail</span></a></li>
+            </ul>
+        </li>
 
 
     </ul>
