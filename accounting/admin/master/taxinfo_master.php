@@ -1,10 +1,7 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "taxinfo_master";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
-    MysqlConnection::insert($tblname, $_POST);
+    
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -32,8 +29,10 @@ $resultset = MysqlConnection::fetchAll($tblname);
                             <tr>
                                 <th>#</th>
                                 <th>Tax ID</th>
+                                <th>Country</th>
+                                <th>Province</th>
                                 <th>Tax Type</th>
-                                <th>Email</th>
+                                <th>Tax Percent</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -44,10 +43,12 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"] ?></td>
-                                    <td><?php echo $value["accounttype"] ?></td>
-                                    <td><?php echo $value["entrydate"] ?></td>
-                                    <td><?php echo $value["active"] ?></td>
+                                    <td><?php echo $value["tax_id"] ?></td>
+                                    <td><?php echo $value["country"] ?></td>
+                                    <td><?php echo $value["province"] ?></td>
+                                    <td><?php echo $value["tax_type"] ?></td>
+                                    <td><?php echo $value["tax_percent"] ?></td>
+
                                 </tr>
                                 <?php
                                 $index++;
@@ -67,7 +68,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h4 class="modal-title" id="myModalLabel">Add TaxInfo Master</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Tax Info Master</h4>
             </div>
             <form name="frmEntry" method="post">
                 <div class="modal-body">
@@ -75,13 +76,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Tax ID *</label>
-                                <input type="text" name="vendorId" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="tax_id" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Country *</label>
-                                <input type="text" name="vendorname" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="country" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -90,13 +91,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Province  <i class="requred">*</i></label>
-                                <input type="text" name="emailid" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <input type="text" name="province" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Tax type*</label>
-                                <input type="text" name="address" autofocus="" placeholder="Enter Address here" class="form-control">
+                                <input type="text" name="tax_type" autofocus="" placeholder="Enter Address here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -105,11 +106,11 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Tax percent*</label>
-                                <input type="text" name="city" autofocus="" placeholder="Enter City Name" class="form-control">
+                                <input type="text" name="tax_percent" autofocus="" placeholder="Enter City Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                      
-                     
+
+
                     </div><!-- row -->
                 </div>  
         </div>  

@@ -1,10 +1,7 @@
 <?php
 $tblname = "customer_master";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
-    MysqlConnection::insert($tblname, $_POST);
+    
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -48,14 +45,14 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["customer_id"]?></td>
-                                    <td><?php echo $value["name"]?></td>
-                                    <td><?php echo $value["customer_email"]?></td>
-                                    <td><?php echo $value["address"]?></td>
-                                    <td><?php echo $value["country"]?></td>
-                                    <td><?php echo $value["province"]?></td>
-                                    <td><?php echo $value["contact_no"]?></td>
-                                    <td><?php echo $value["fax_no"]?></td>
+                                    <td><?php echo $value["customer_id"] ?></td>
+                                    <td><?php echo $value["name"] ?></td>
+                                    <td><?php echo $value["customer_email"] ?></td>
+                                    <td><?php echo $value["address"] ?></td>
+                                    <td><?php echo $value["country"] ?></td>
+                                    <td><?php echo $value["province"] ?></td>
+                                    <td><?php echo $value["contact_no"] ?></td>
+                                    <td><?php echo $value["fax_no"] ?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -86,28 +83,28 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <input type="text" name="customer_id" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                         <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Customer Name *</label>
                                 <input type="text" name="name" autofocus="" placeholder="Enter Account Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                        
+
                     </div><!-- row -->
                     <div class="row">
                         <div class="col-sm-6">
-                              <div class="form-group no-margin-hr">
+                            <div class="form-group no-margin-hr">
                                 <label class="control-label">Email Id  <i class="requred">*</i></label>
                                 <input type="text" name="customer_email" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                         <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Address*</label>
                                 <input type="text" name="address" autofocus="" placeholder="Enter Address here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                        
+
                     </div><!-- row -->
                     <div class="row">
                         <div class="col-sm-6">
@@ -116,25 +113,25 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <input type="text" name="country" autofocus="" placeholder="Enter City Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                         <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Province *</label>
                                 <input type="text" name="province" autofocus="" placeholder="Enter Province" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                         <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contact Number *</label>
                                 <input type="text" name="contact_no" autofocus="" placeholder="Enter Contact" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                         <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Fax Number *</label>
                                 <input type="text" name="fax_no" autofocus="" placeholder="Enter Fax number" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                        
+
                     </div><!-- row -->
                 </div>  
                 <div class="modal-footer">
