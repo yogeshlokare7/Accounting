@@ -1,10 +1,7 @@
 <?php
-$tblname = "tbl_account";
+$tblname = "contractor_master";
 if (count($_POST) > 0) {
-    $_POST["entrydate"] = date("y-m-d");
-    $_POST["updatedate"] = date("y-m-d");
-    $_POST["active"] = "Y";
-    MysqlConnection::insert($tblname, $_POST);
+    
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -22,7 +19,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <span class="panel-title">View <?php echo $explode[1] ?></span>
                 <span class="panel-title">&nbsp;|&nbsp;</span>
                 <span class="panel-title">
-                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Contractor </button>
+                    <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Contractor Info</button>
                 </span>
             </div>
             <div class="panel-body">
@@ -31,10 +28,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Contractor Id</th>
                                 <th>Contractor Name</th>
-                                <th>Account Type</th>
-                                <th>Entry Date</th>
-                                <th>Active</th>
+                                <th>Contractor email</th>
+                                <th>address</th>
+                                <th>country</th>
+                                <th>province</th> 
+                                <th>contact No</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,10 +44,14 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["accountname"]?></td>
-                                    <td><?php echo $value["accounttype"]?></td>
-                                    <td><?php echo $value["entrydate"]?></td>
-                                    <td><?php echo $value["active"]?></td>
+                                    <td><?php echo $value["contractor_id"] ?></td>
+                                    <td><?php echo $value["name"] ?></td>
+                                    <td><?php echo $value["contractor_email"] ?></td>
+                                    <td><?php echo $value["address"] ?></td>
+                                    <td><?php echo $value["country"] ?></td>
+                                    <td><?php echo $value["province"] ?></td>
+                                    <td><?php echo $value["contact_no"] ?></td>
+                                    <td><?php echo $value["fax_no"] ?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -75,13 +79,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contractor ID *</label>
-                                <input type="text" name="ContractorId" autofocus="" placeholder="Enter Id" class="form-control">
+                                <input type="text" name="contractor_id" autofocus="" placeholder="Enter Id" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contractor Name *</label>
-                                <input type="text" name="Contractorname" autofocus="" placeholder="Enter Contractor Name" class="form-control">
+                                <input type="text" name="name" autofocus="" placeholder="Enter Contractor Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
@@ -90,7 +94,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Email Id  <i class="requred">*</i></label>
-                                <input type="text" name="emailid" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <input type="text" name="contractor_email" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
@@ -104,8 +108,8 @@ $resultset = MysqlConnection::fetchAll($tblname);
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">City*</label>
-                                <input type="text" name="city" autofocus="" placeholder="Enter City Name" class="form-control">
+                                <label class="control-label">Counrty*</label>
+                                <input type="text" name="country" autofocus="" placeholder="Enter City Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
@@ -117,25 +121,25 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contact Number *</label>
-                                <input type="text" name="contact" autofocus="" placeholder="Enter Contact" class="form-control">
+                                <input type="text" name="contact_no" autofocus="" placeholder="Enter Contact" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Fax Number *</label>
-                                <input type="text" name="fax" autofocus="" placeholder="Enter Fax number" class="form-control">
+                                <input type="text" name="fax_no" autofocus="" placeholder="Enter Fax number" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
 
                     </div><!-- row -->
                 </div>  
-                </div>  
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" value="Save"/>  
-                    <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-        </div> 
-    </div>  
+        </div>  
+        <div class="modal-footer">
+            <input type="submit" class="btn btn-primary" value="Save"/>  
+            <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>
+        </div>
+        </form>
+    </div> 
+</div>  
 </div>  
 <!--- ADD POP UP DIALOG ---->
