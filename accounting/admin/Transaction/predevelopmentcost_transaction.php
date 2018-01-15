@@ -1,7 +1,7 @@
 <?php
 $tblname = "pre_development_cost";
 if (count($_POST) > 0) {
-   
+
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
@@ -23,21 +23,24 @@ $resultset = MysqlConnection::fetchAll($tblname);
                     <button class="btn btn-success btn-xs btn-outline btn-flat btn-rounded" data-toggle="modal" data-target="#myModal">Add Pre Development Cost</button>
                 </span>
             </div>
+
             <div class="panel-body">
                 <div class="table-primary">
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
                         <thead>
                             <tr>
                                 <th>#</th>
-                               
+                                <th>Project Name</th>
                                 <th>Payee Name</th>
-                                <th>Coast Code</th>
-                                <th>NetCoast</th>
-                                <th>GST</th>
-                                <th>PST</th>
-                                <th>HoldBack</th>
-                                <th>Gross Amount</th>
-                                <th>Project Id</th>
+                                <th>Item Number</th>	
+                                <th>Invoice Number</th>	
+                                <th>Payee</th>	
+                                <th>Net Cost</th>	
+                                <th>GST</th>	
+                                <th>PST</th>	
+                                <th>Gross Amount</th>	
+                                <th>Cost Code</th>		
+                                <th>Paid Out</th>	
                             </tr>
                         </thead>
                         <tbody>
@@ -47,14 +50,17 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["payee_name"]?></td>
-                                    <td><?php echo $value["coast_code"]?></td>
-                                    <td><?php echo $value["netCoast"]?></td>
-                                     <td><?php echo $value["gst"]?></td>
-                                    <td><?php echo $value["pst"]?></td>
-                                    <td><?php echo $value["holdBack"]?></td>
-                                    <td><?php echo $value["gross_amt"]?></td>
-                                     <td><?php echo $value["proj_id"]?></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -80,64 +86,75 @@ $resultset = MysqlConnection::fetchAll($tblname);
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Payee Name *</label>
-                                <input type="text" name="payee_name" maxlength="30" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Coast Code</label>
-                                <input type="text" name="coast_code" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
+                            <label class="control-label">Project Name *</label>
+                            <select class="form-control">
+                                <option>Project name - 1</option>
+                                <option>Project name - 2</option>
+                            </select>
+                        </div>
                         <div class="col-sm-6">
-                              <div class="form-group no-margin-hr">
-                                <label class="control-label">Net Coast</label>
-                                <input type="text" name="netCoast" maxlength="15" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                              <div class="form-group no-margin-hr">
-                                <label class="control-label">GST</label>
-                                <input type="text" name="gst" maxlength="5" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                           
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                       <div class="row">
+                            <label class="control-label">Payee Name</label>
+                            <input type="text" name="" maxlength="5"  autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                    </div><!-- col-sm-6 -->
+
+                    <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">PST</label>
-                                <input type="text" name="pst" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
+                            <label class="control-label">Item Number *</label>
+                            <input type="text" name="" maxlength="30" autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Holdback</label>
-                                <input type="text" name="holdBack" onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                       <div class="row">
+                            <label class="control-label">Invoice Number</label>
+                            <input type="text" name="" maxlength="5"  autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                    </div><!-- col-sm-6 -->
+
+                    <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Gross Amount</label>
-                                <input type="text" name="gross_amt" maxlength="25"  autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
+                            <label class="control-label">Net Cost *</label>
+                            <input type="text" name="" maxlength="30" autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
                         <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Project Id</label>
-                              <input type="text" name="proj_id"  onkeypress="return chkNumericKey(event)" autofocus="" placeholder="Enter Account Name" class="form-control">
-                            </div>
-                        </div><!-- col-sm-6 -->
-                    </div><!-- row -->
-                     <div class="row">
+                            <label class="control-label">GST</label>
+                            <input type="text" name="" maxlength="5"  autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                    </div><!-- col-sm-6 -->
+
+                    <div class="row">
                         <div class="col-sm-6">
-                           
-                            
-                        </div><!-- col-sm-6 -->
-                        
-                    </div><!-- row -->
-                     
+                            <label class="control-label">PST *</label>
+                            <input type="text" name="" maxlength="30" autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="control-label">Holdback</label>
+                            <input type="text" name="" maxlength="5"  autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                    </div><!-- col-sm-6 -->
+
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="control-label">Gross Amount *</label>
+                            <input type="text" name="" maxlength="30" autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="control-label">Comments</label>
+                            <input type="text" name="" maxlength="5"  autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                    </div><!-- col-sm-6 -->
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label class="control-label">Cost Code *</label>
+                            <input type="text" name="" maxlength="30" autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="control-label">Paid Out</label>
+                            <input type="text" name="" maxlength="5"  autofocus="" placeholder="Enter Data" class="form-control">
+                        </div>
+                    </div><!-- col-sm-6 -->
+
+
                 </div>  
                 <div class="modal-footer">
                     <input type="submit" class="btn btn-primary" value="Save"/>  

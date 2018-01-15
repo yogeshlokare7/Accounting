@@ -65,13 +65,13 @@ $resultset = MysqlConnection::fetchAll($tblname);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Category Name *</label>
                                 <input type="text" name="name" autofocus="" placeholder="Enter Category Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                         <div class="form-group no-margin-hr">
                                 <label class="control-label">Description *</label>
                                 <input type="text" name="description" autofocus="" placeholder="Enter Category Name" class="form-control">

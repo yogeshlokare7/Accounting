@@ -32,7 +32,7 @@ if (count($explode) >= 2) {
     <link href="../assets/stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/stylesheets/themes.min.css" rel="stylesheet" type="text/css">
-     <script>
+    <script>
         function chkNumericKey(event) {
             var charCode = (event.which) ? event.which : event.keyCode;
             if ((charCode >= 48 && charCode <= 57) || charCode == 46 || charCode == 45) {

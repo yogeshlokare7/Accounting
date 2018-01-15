@@ -1,7 +1,7 @@
 <?php
 $tblname = "taxinfo_master";
 if (count($_POST) > 0) {
-  MysqlConnection::insert($tblname, $_POST);  
+    MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
 ?>
@@ -75,34 +75,37 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Country *</label>
-                                <input type="text" name="country" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <select class="form-control">
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
                             </div>
                         </div><!-- col-sm-6 -->
-
-                    </div><!-- row -->
-                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Province  <i class="requred">*</i></label>
-                                <input type="text" name="province" required="true" autofocus="" placeholder="Enter Data Here" class="form-control">
+                                <select class="form-control">
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
+                                </select>
                             </div>
                         </div><!-- col-sm-6 -->
+                    </div><!-- row -->
+                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Tax type*</label>
+                                <label class="control-label">Tax Type*</label>
                                 <input type="text" name="tax_type" autofocus="" placeholder="Enter Address here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-
-                    </div><!-- row -->
-                    <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Tax percent*</label>
                                 <input type="text" name="tax_percent" autofocus="" placeholder="Enter City Name" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-
 
                     </div><!-- row -->
                 </div>  
@@ -113,6 +116,5 @@ $resultset = MysqlConnection::fetchAll($tblname);
         </div>
         </form>
     </div> 
-</div>  
 </div>  
 <!--- ADD POP UP DIALOG ---->

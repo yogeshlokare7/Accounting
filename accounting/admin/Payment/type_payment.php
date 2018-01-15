@@ -1,5 +1,5 @@
 <?php
-$tblname = "payment_summry_detail";
+$tblname = "payment_summary_detail_type";
 if (count($_POST) > 0) {
     MysqlConnection::insert($tblname, $_POST);
 }
@@ -65,27 +65,16 @@ $resultset = MysqlConnection::fetchAll($tblname);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Payment Part/Type*</label>
-                                <input type="text" name="name" autofocus="" placeholder="Enter Account Name" class="form-control">
+                                <input type="text" name="name" autofocus="" placeholder="Enter Data" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
-                                <label class="control-label">Payment Summary *<i class="requred"></i></label>
-                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
-                                    <option value="">Select Payment Summary</option>
-                                    <?php
-                                    foreach ($resultsetEmployees as $key => $value) {
-                                        ?>
-                                        <option value="<?php echo $value["id"] ?>">
-                                            <?php echo $value["firstname"] ?> <?php echo $value["middlename"] ?> <?php echo $value["lastname"] ?> 
-                                        </option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
+                                <label class="control-label">Description *<i class="requred"></i></label>
+                                <input type="text" name="description" autofocus="" placeholder="Enter Data" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                     </div><!-- row -->

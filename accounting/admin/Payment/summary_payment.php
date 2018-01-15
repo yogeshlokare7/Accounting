@@ -28,32 +28,26 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Project Name</th>
                                 <th>Developer Name</th>
-                                <th>Contractor</th>
-                                <th>Contractor Contact</th>
-                                <th>Subtrade </th>
-                                <th>Subtrade Contact</th>
-                                <th>Purchase Order No</th>
+                                <th>Total Invoice</th>
+                                <th></th>
+                                <th></th>
+                                <th>ADD</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            $index = 1;
-                            foreach ($resultset as $key => $value) {
-                                ?>
-                                <tr class="odd gradeX">
-                                    <td><?php echo $index ?></td>
-                                    <td><?php echo $value["developer_name"] ?></td>
-                                    <td><?php echo $value["contractor_id"] ?></td>
-                                    <td>Pravin Tumsare</td>
-                                    <td><?php echo $value["subtrader_id"] ?></td>
-                                    <td>Yogesh Lokare</td>
-                                    <td><?php echo $value["po_no"] ?></td>
-                                </tr>
-                                <?php
-                                $index++;
-                            }
-                            ?>
+                            <tr class="odd gradeX">
+                                <td>1</td>
+                                <td>Vantage Squamish</td>
+                                <td>Epix Squamish Limited Partnership</td>
+                                <td><a href="mainpage.php?pagename=adddetailsummary_payment">5</a></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="mainpage.php?pagename=addsummary_payment">ADD</a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -75,6 +69,20 @@ $resultset = MysqlConnection::fetchAll($tblname);
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
+                                <label class="control-label">Project  *</label>
+                                <select name="" class="form-control">
+                                    <?php
+                                    for ($index = 1; $index < 3; $index++) {
+                                        ?>
+                                        <option>Project - <?php echo $index ?></option>
+                                        <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div><!-- col-sm-6 -->
+                        <div class="col-sm-6">
+                            <div class="form-group no-margin-hr">
                                 <label class="control-label">Developer Name *</label>
                                 <input type="text" name="name" autofocus="" placeholder="Enter Developer Name" class="form-control">
                             </div>
@@ -85,18 +93,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Contractor Name *<i class="requred"></i></label>
-                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
-                                    <option value="">Select Contractor Name</option>
-                                    <?php
-                                    foreach ($resultsetEmployees as $key => $value) {
-                                        ?>
-                                        <option value="<?php echo $value["id"] ?>">
-                                            <?php echo $value["firstname"] ?> <?php echo $value["middlename"] ?> <?php echo $value["lastname"] ?> 
-                                        </option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
+                                <input type="text" name="address" autofocus="" placeholder="Enter Contractor Contact here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
@@ -111,18 +108,7 @@ $resultset = MysqlConnection::fetchAll($tblname);
                         <div class="col-sm-6">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Subtrade Name *<i class="requred"></i></label>
-                               <select id="empId" name="employeeid" required="true" autofocus="true" class="form-control" tabindex="1" required>
-                                    <option value="">Select Subtrader Name</option>
-                                    <?php
-                                    foreach ($resultsetEmployees as $key => $value) {
-                                        ?>
-                                        <option value="<?php echo $value["id"] ?>">
-                                            <?php echo $value["firstname"] ?> <?php echo $value["middlename"] ?> <?php echo $value["lastname"] ?> 
-                                        </option>
-                                        <?php
-                                    }
-                                    ?>
-                                </select>
+                                <input type="text" name="address" autofocus="" placeholder="Enter Contractor Contact here" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
                         <div class="col-sm-6">
@@ -140,7 +126,6 @@ $resultset = MysqlConnection::fetchAll($tblname);
                                 <input type="text" name="name" autofocus="" placeholder="Enter Purchase Order No" class="form-control">
                             </div>
                         </div><!-- col-sm-6 -->
-
                     </div><!-- row -->
                 </div>  
                 <div class="modal-footer">

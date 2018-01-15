@@ -4,7 +4,6 @@ if (count($_POST) > 0) {
     MysqlConnection::insert($tblname, $_POST);
 }
 $resultset = MysqlConnection::fetchAll($tblname);
-print_r($resultset);
 ?>
 <div class="row">
     <div class="col-sm-12">
@@ -29,23 +28,23 @@ print_r($resultset);
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Category Id</th>
                                 <th>Category Name</th>
+                                <th>Sub Category</th>
                                 <th>Description</th>
-                                <th>Category Type Id</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $index = 1;
                             foreach ($resultset as $key => $value) {
+                                $categorytypeid = $value["categorytype_id"];
+                                $categotyvalue = MysqlConnection::fetchByPrimary("category_type_master", $categorytypeid, "categorytype_id");
                                 ?>
                                 <tr class="odd gradeX">
                                     <td><?php echo $index ?></td>
-                                    <td><?php echo $value["category_id"] ?></td>
+                                    <td><?php echo $categotyvalue["name"] ?></td>
                                     <td><?php echo $value["name"] ?></td>
                                     <td><?php echo $value["description"] ?></td>
-                                    <td><?php echo $value["categorytype_id"] ?></td>
                                 </tr>
                                 <?php
                                 $index++;
@@ -69,25 +68,24 @@ print_r($resultset);
             <form name="frmEntry" method="post">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
+                            <div class="form-group no-margin-hr">
+                                <label class="control-label">Category Type*</label>
+                                <select class="form-control">
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Category Name *</label>
                                 <input type="text" name="name" autofocus="" placeholder="Enter Category Type" class="form-control">
                             </div>
                         </div>
-                    </div><!-- row -->
-                    <div class="row">
-
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group no-margin-hr">
                                 <label class="control-label">Description *</label>
                                 <input type="text" name="description" autofocus="" placeholder="Enter Description" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group no-margin-hr">
-                                <label class="control-label">Category Type Id*</label>
-                                <input type="text" name="categorytype_id" autofocus="" placeholder="Enter Description" class="form-control">
                             </div>
                         </div>
                     </div><!-- row -->
